@@ -19,7 +19,7 @@ export class ProductController {
           name: error.name,
           ...(error.name === 'ValidationError' && { errors: error.errors }),
         },
-        stack: error.stack,
+        stack: `Error: Something went wrong! \n ${error.stack}`,
       });
     }
   }
@@ -44,7 +44,7 @@ export class ProductController {
           name: error.name,
           message: error.message,
         },
-        stack: error.stack,
+        stack: `Error: Something went wrong! \n ${error.stack}`,
       });
     }
   }
@@ -73,7 +73,7 @@ export class ProductController {
           name: error.name,
           message: error.message,
         },
-        stack: error.stack,
+        stack: `Error: Something went wrong! \n ${error.stack}`,
       });
     }
   }
@@ -105,7 +105,7 @@ export class ProductController {
           name: error.name,
           ...(error.name === 'ValidationError' && { errors: error.errors }),
         },
-        stack: error.stack,
+        stack: `Error: Something went wrong! \n ${error.stack}`,
       });
     }
   }
@@ -134,7 +134,7 @@ export class ProductController {
           name: error.name,
           message: error.message,
         },
-        stack: error.stack,
+        stack: `Error: Something went wrong! \n ${error.stack}`,
       });
     }
   }

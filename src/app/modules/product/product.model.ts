@@ -72,12 +72,6 @@ productSchema.pre('aggregate', function (next) {
   next();
 });
 
-// Middleware to log creation
-productSchema.pre('save', function (next) {
-  console.log(`Product "${this.name}" is being saved.`);
-  next();
-});
-
 // Static method to find a product by name (ignores deleted products)
 productSchema.statics.findByName = async function (name: string) {
   return this.findOne({ name, isDeleted: false });

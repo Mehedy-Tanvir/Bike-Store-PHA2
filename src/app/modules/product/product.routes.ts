@@ -1,5 +1,11 @@
 import { Router } from 'express';
 import { ProductController } from './product.controller';
+// import {
+//   createProductSchema,
+//   updateProductSchema,
+//   getProductSchema,
+// } from './product.vallidation';
+// import { validate } from './product.validation.middleware';
 
 const productRouter = Router();
 
