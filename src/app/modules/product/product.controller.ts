@@ -13,9 +13,13 @@ export class ProductController {
       });
     } catch (error: any) {
       res.status(400).json({
-        message: 'Failed to create bike',
+        message: 'Validation failed',
         success: false,
-        error: error.message,
+        error: {
+          name: error.name,
+          ...(error.name === 'ValidationError' && { errors: error.errors }),
+        },
+        stack: error.stack,
       });
     }
   }
@@ -36,7 +40,11 @@ export class ProductController {
       res.status(400).json({
         message: 'Failed to retrieve bikes',
         success: false,
-        error: error.message,
+        error: {
+          name: error.name,
+          message: error.message,
+        },
+        stack: error.stack,
       });
     }
   }
@@ -61,7 +69,11 @@ export class ProductController {
       res.status(400).json({
         message: 'Failed to retrieve bike',
         success: false,
-        error: error.message,
+        error: {
+          name: error.name,
+          message: error.message,
+        },
+        stack: error.stack,
       });
     }
   }
@@ -87,9 +99,13 @@ export class ProductController {
       });
     } catch (error: any) {
       res.status(400).json({
-        message: 'Failed to update bike',
+        message: 'Validation failed',
         success: false,
-        error: error.message,
+        error: {
+          name: error.name,
+          ...(error.name === 'ValidationError' && { errors: error.errors }),
+        },
+        stack: error.stack,
       });
     }
   }
@@ -114,7 +130,11 @@ export class ProductController {
       res.status(400).json({
         message: 'Failed to delete bike',
         success: false,
-        error: error.message,
+        error: {
+          name: error.name,
+          message: error.message,
+        },
+        stack: error.stack,
       });
     }
   }

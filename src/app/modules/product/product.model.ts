@@ -1,7 +1,7 @@
 import { model, Schema, Query } from 'mongoose';
 import { TProduct } from './product.interface';
 
-const productSchema = new Schema<TProduct & { isDeleted: boolean }>(
+const productSchema = new Schema<TProduct>(
   {
     name: {
       type: String,
@@ -45,21 +45,20 @@ const productSchema = new Schema<TProduct & { isDeleted: boolean }>(
     isDeleted: {
       type: Boolean,
       default: false,
-      select: false, // This ensures the field is not returned by default in queries
     },
   },
   {
     timestamps: true,
     toJSON: {
-      virtuals: true,
+      transform: function (doc, ret) {
+        // Remove __v and isDeleted from the response
+        delete ret.__v;
+        delete ret.isDeleted;
+        return ret;
+      },
     },
   },
 );
-
-// Virtual property to check if the product is available
-productSchema.virtual('isAvailable').get(function () {
-  return this.inStock && this.quantity > 0;
-});
 
 // Middleware to exclude deleted documents in find and findOne queries
 productSchema.pre(/^find/, function (this: Query<any, any>, next) {
