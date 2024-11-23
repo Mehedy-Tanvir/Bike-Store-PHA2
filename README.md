@@ -43,7 +43,7 @@ A comprehensive API for managing bike inventory, handling orders, and calculatin
 
    ```bash
    git clone https://github.com/Mehedy-Tanvir/Bike-Store-PHA2.git
-   cd bike-store
+   cd Bike-Store-PHA2
    ```
 
 2. **Install Dependencies**
