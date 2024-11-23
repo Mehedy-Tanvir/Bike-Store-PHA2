@@ -8,15 +8,20 @@ export class ProductService {
     return await product.save();
   }
 
-  // Get all products with optional search by name, brand, or category
-  static async getAllProducts(searchTerm?: string): Promise<TProduct[]> {
+  static async getAllProducts(queryParam: {
+    name?: string;
+    brand?: string;
+    category?: string;
+  }): Promise<TProduct[]> {
     const query: Record<string, any> = { isDeleted: false };
-    if (searchTerm) {
-      query.$or = [
-        { name: { $regex: searchTerm, $options: 'i' } },
-        { brand: { $regex: searchTerm, $options: 'i' } },
-        { category: { $regex: searchTerm, $options: 'i' } },
-      ];
+
+    // Check which query parameter is present and apply the filter accordingly
+    if (queryParam.name) {
+      query.name = { $regex: queryParam.name, $options: 'i' };
+    } else if (queryParam.brand) {
+      query.brand = { $regex: queryParam.brand, $options: 'i' };
+    } else if (queryParam.category) {
+      query.category = { $regex: queryParam.category, $options: 'i' };
     }
     return await Product.find(query);
   }

@@ -24,27 +24,39 @@ export class ProductController {
     }
   }
 
-  // Get All Bikes
+  // Get All Products by Name, Brand, or Category
   static async getAllProducts(req: Request, res: Response): Promise<void> {
     try {
-      const { searchTerm } = req.query;
-      const products = await ProductService.getAllProducts(
-        searchTerm as string,
-      );
+      // Extract query parameters from the request
+      const { name, brand, category } = req.query;
+
+      // Call the service with the appropriate query parameter
+      const products = await ProductService.getAllProducts({
+        name: name as string,
+        brand: brand as string,
+        category: category as string,
+      });
+
+      // Send success response
       res.status(200).json({
-        message: 'Bikes retrieved successfully',
+        message: 'Products retrieved successfully',
         success: true,
         data: products,
       });
-    } catch (error: any) {
-      res.status(400).json({
-        message: 'Failed to retrieve bikes',
+    } catch (error: unknown) {
+      // Handle errors
+      const errorMessage =
+        error instanceof Error ? error.message : 'An unknown error occurred';
+      const errorStack =
+        error instanceof Error ? error.stack : 'No stack trace available';
+
+      res.status(500).json({
+        message: 'Failed to retrieve products',
         success: false,
         error: {
-          name: error.name,
-          message: error.message,
+          message: errorMessage,
         },
-        stack: `Error: Something went wrong! \n ${error.stack}`,
+        stack: errorStack,
       });
     }
   }
