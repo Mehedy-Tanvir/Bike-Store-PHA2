@@ -244,4 +244,4 @@ A comprehensive API for managing bike inventory, handling orders, and calculatin
 
 ## 📧 **Contact**
 
-For questions or support, please reach out via [your email or GitHub profile](https://github.com/Mehedy-Tanvir).
+For questions or support, please reach out via [Md. Mehedy Hasan Tanvir](https://github.com/Mehedy-Tanvir).
