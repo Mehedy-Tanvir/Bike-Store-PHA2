@@ -42,7 +42,7 @@ A comprehensive API for managing bike inventory, handling orders, and calculatin
 1. **Clone the Repository**
 
    ```bash
-   git clone https://github.com/your-username/bike-store.git
+   git clone https://github.com/Mehedy-Tanvir/Bike-Store-PHA2.git
    cd bike-store
    ```
 
