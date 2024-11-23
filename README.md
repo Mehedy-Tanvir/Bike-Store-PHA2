@@ -214,8 +214,6 @@ A comprehensive API for managing bike inventory, handling orders, and calculatin
 
 ---
 
----
-
 ## 📚 **Technologies Used**
 
 - **Node.js** & **Express.js**
