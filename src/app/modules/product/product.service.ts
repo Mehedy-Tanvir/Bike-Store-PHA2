@@ -17,11 +17,11 @@ export class ProductService {
 
     // Check which query parameter is present and apply the filter accordingly
     if (queryParam.name) {
-      query.name = { $regex: queryParam.name, $options: 'i' };
+      query.name = queryParam.name;
     } else if (queryParam.brand) {
-      query.brand = { $regex: queryParam.brand, $options: 'i' };
+      query.brand = queryParam.brand;
     } else if (queryParam.category) {
-      query.category = { $regex: queryParam.category, $options: 'i' };
+      query.category = queryParam.category;
     }
     return await Product.find(query);
   }
