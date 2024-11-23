@@ -58,8 +58,9 @@ A comprehensive API for managing bike inventory, handling orders, and calculatin
    Create a `.env` file in the root directory and add the following:
 
    ```env
-   PORT=3000
-   MONGO_URI=mongodb+srv://<username>:<password>@cluster0.mongodb.net/bike-store
+   NODE_ENV=development
+   PORT=5000
+   DATABASE_URL=mongodb+srv://<username>:<password>@cluster0.mongodb.net/bike-store
    ```
 
 4. **Run the Project**
