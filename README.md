@@ -214,22 +214,6 @@ A comprehensive API for managing bike inventory, handling orders, and calculatin
 
 ---
 
-## 🧩 **Project Structure**
-
-```plaintext
-├── src
-│   ├── controllers       # Controllers for handling API logic
-│   ├── models            # MongoDB models (Product, Order)
-│   ├── routes            # API routes
-│   ├── utils             # Utility functions and helpers
-│   └── server.ts         # Application entry point
-├── .env                  # Environment variables
-├── .eslintrc.json        # ESLint configuration
-├── tsconfig.json         # TypeScript configuration
-├── package.json          # Dependencies and scripts
-└── README.md             # Project documentation
-```
-
 ---
 
 ## 📚 **Technologies Used**
