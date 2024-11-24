@@ -1,6 +1,6 @@
 # 🚴 Bike Store API
 
-A comprehensive API for managing bike inventory, handling orders, and calculating revenue. Built with **TypeScript**, **Express.js**, and **MongoDB**, this application provides robust endpoints for efficient bike store management.
+It is an application to manage bike store. This application manages bike stock, take orders and calculate profits.This application is developed in **TypeScript**, **Express.js**, and **MongoDB**, and it has rich endpoints that can be used effectively for managing a bike store.
 
 ---
 
@@ -8,21 +8,27 @@ A comprehensive API for managing bike inventory, handling orders, and calculatin
 
 ### 📦 **Product Management**
 
-- **Add New Product**: Create a bike with details like name, brand, price, category, and stock status.
-- **Get All Bikes**: Retrieve a list of all available bikes with support for filters (e.g., name, brand, category).
-- **Get Specific Bike**: Fetch detailed information about a specific bike using its unique ID.
-- **Update Bike**: Modify bike details such as price and stock quantity.
-- **Delete Bike**: Soft delete a bike, ensuring it is no longer available for transactions.
+- **Add New Product**: It can create a bike with details like name, brand, price, category, and stock status.
+- **Get All Bikes**: It can retrieve a list of all available bikes with support for filters (e.g., name, brand, category).
+- **Get Specific Bike**: It can fetch detailed information about a specific bike using its unique ID.
+- **Update Bike**: it can modify bike details such as price and stock quantity.
+- **Delete Bike**: It can soft delete a bike, ensuring it is no longer available for transactions.
+- **Error Handling**: It can return appropriate messages if invalid values are tried to add.
 
 ### 🛒 **Order Management**
 
-- **Place Orders**: Reduce inventory when a bike is ordered, ensuring inventory accuracy.
-- **Handle Stock**: Automatically update stock status (`inStock`) when quantities reach zero.
-- **Error Handling**: Return appropriate messages for insufficient stock during order placement.
+- **Place Orders**: It can reduce inventory when a bike is ordered, ensuring inventory accuracy.
+- **Handle Stock**: It can automatically update stock status (`inStock`) when quantities reach zero.
+- **Error Handling**: It can return appropriate messages for insufficient stock during order placement.
 
 ### 📊 **Revenue Calculation**
 
-- **Calculate Revenue**: Use MongoDB's aggregation pipeline to compute total revenue from all orders.
+- **Calculate Revenue**: It uses MongoDB's aggregation pipeline to compute total revenue from all orders.
+
+### 📊 **Debuggers**
+
+- **ESlint**: It finds and fixes errors in run time.
+- **Prettier**: It finds and formates code in run time.
 
 ---
 
