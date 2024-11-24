@@ -51,7 +51,7 @@ const productSchema = new Schema<TProduct>(
     timestamps: true,
     toJSON: {
       transform: function (doc, ret) {
-        // Remove __v and isDeleted from the response
+        // To Remove __v and isDeleted from the response
         delete ret.__v;
         delete ret.isDeleted;
         return ret;

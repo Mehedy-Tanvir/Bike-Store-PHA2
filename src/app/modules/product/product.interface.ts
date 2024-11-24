@@ -1,3 +1,4 @@
+// product (bike) interface
 export type TProduct = {
   name: string;
   brand: string;
